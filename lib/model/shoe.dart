@@ -11,7 +11,7 @@ class Shoe {
 
 class Run {
   final double distance;
-  final double duration;
+  final int duration;
   final String shoe;
   final DateTime date;
   final String path;
@@ -20,4 +20,10 @@ class Run {
         this.duration = document['duration'],
         this.shoe = document['shoe'],
         this.date = document['date']?.toDate();
+}
+
+class Extra {
+  final double totalDistance;
+  final String path;
+  Extra.from({this.path, Map<String, dynamic> document}) : this.totalDistance = document['total_distance'];
 }
