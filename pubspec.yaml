@@ -26,6 +26,9 @@ dependencies:
   rxdart:
   provider: 
   cloud_firestore:
+  flutter_icons:
+  intl:
+  uuid:
 
 
   # The following adds the Cupertino Icons font to your application.

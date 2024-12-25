@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:runninglog/model/shoe.dart';
 import 'package:runninglog/providers/firestore_holder.dart';
+import 'package:runninglog/ui/forms/run_form.dart';
+import 'package:runninglog/ui/runs.dart';
+import 'package:runninglog/ui/scaffold.dart';
+
+import 'ui/splash.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,6 +25,11 @@ class MyApp extends StatelessWidget {
       },
       child: MaterialApp(
         title: 'Running Log',
+        routes: {
+          'add_run': (context) {
+            return RunCreationPage();
+          }
+        },
         theme: ThemeData(
           // This is the theme of your application.
           //
@@ -35,7 +46,9 @@ class MyApp extends StatelessWidget {
           // closer together (more dense) than on mobile platforms.
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: MyHomePage(title: 'Running log'),
+        home: Splash(
+          child: TabScaffold(),
+        ),
       ),
     );
   }
